@@ -6,7 +6,15 @@ import play.api.mvc._
 object Application extends Controller {
 
   def index = Action {
-    Ok(views.html.index("Your new application is ready."))
+    Ok(views.html.pages.index("Play 2 Starter"))
+  }
+
+  def page2 = Action {
+    Ok(views.html.pages.page2("Play 2 Starter"))
+  }
+
+  def welcome = Action {
+    Ok(views.html.pages.welcome("Your new application is ready."))
   }
 
 }
