@@ -1,4 +1,4 @@
-@(page: String, brand: String)
+@(page: String)
 
 <!-- Fixed navbar -->
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -10,14 +10,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="@routes.Application.index()">@brand</a>
+      <a class="navbar-brand" href="@routes.PublicApp.index()">Play 2 Starter</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="@("active".when(page == "Welcome"))"><a href="@routes.Application.welcome()">Welcome</a></li>
-        <li class="@("active".when(page == "Home"))"><a href="@routes.Application.index()">Home</a></li>
-        <li class="@("active".when(page == "Page 2"))"><a href="@routes.Application.page2()">Page 2</a></li>
-        <li class="@("active".when(page == "Login"))"><a href="@routes.Application.login()">Login</a></li>
+        <li class="@("active".when(page == "Welcome"))"><a href="@routes.PublicApp.welcome()">Welcome</a></li>
+        <li class="@("active".when(page == "Home"))"><a href="@routes.PublicApp.index()">Home</a></li>
+        <li class="@("active".when(page == "Page 2"))"><a href="@routes.PublicApp.page2()">Page 2</a></li>
+        <li class="@("active".when(page == "LoggedHome"))"><a href="@routes.SecuredApp.home()">Logged home</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
           <ul class="dropdown-menu">
