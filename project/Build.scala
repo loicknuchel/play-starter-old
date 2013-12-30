@@ -10,5 +10,8 @@ object ApplicationBuild extends Build {
     resolvers ++= Seq(
       Resolver.url("sbt-plugin-snapshots", new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots/"))(Resolver.ivyStylePatterns)),
     libraryDependencies ++= Seq(
-      "securesocial" %% "securesocial" % "master-SNAPSHOT"))
+      "securesocial" %% "securesocial" % "master-SNAPSHOT",
+      "se.radley" %% "play-plugins-salat" % "1.4.0"),
+    routesImport += "se.radley.plugin.salat.Binders._",
+    templatesImport += "org.bson.types.ObjectId")
 }

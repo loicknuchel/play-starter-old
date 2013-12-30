@@ -1,3 +1,5 @@
+500:se.radley.plugin.salat.SalatPlugin
+
 1500:com.typesafe.plugin.CommonsMailerPlugin
 9994:securesocial.core.DefaultAuthenticatorStore
 9995:securesocial.core.DefaultIdGenerator

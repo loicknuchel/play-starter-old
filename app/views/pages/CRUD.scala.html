@@ -1,0 +1,27 @@
+@(users: List[User], userForm: Form[String])
+
+@import helper._
+@main("User CRUD - Play starter") {
+	@header("CRUD")
+    <div class="container">
+	
+	    <h1>@users.size user(s)</h1>
+	    <ul>
+	    @users.map { user =>
+	        <li>
+	            @user.username
+	            @form(routes.CRUDApp.deleteUser(user.username)) {
+	                <input type="submit" value="Delete">
+	            }
+	        </li>
+	    }
+	    </ul>
+	    
+	    <h2>Add a new User</h2>
+	    @form(routes.CRUDApp.newUser) {
+	        @inputText(userForm("username"))
+	        <input type="submit" value="Create">
+	    }
+    
+    </div> <!-- /container -->
+}

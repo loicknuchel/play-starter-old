@@ -9,10 +9,6 @@ object PublicApp extends Controller {
     Ok(views.html.pages.index())
   }
 
-  def page2 = Action {
-    Ok(views.html.pages.page2())
-  }
-
   def welcome = Action {
     Ok(views.html.pages.welcome("Your new application is ready."))
   }

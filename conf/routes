@@ -4,11 +4,15 @@
 
 # Public pages
 GET    /                         controllers.PublicApp.index
-GET    /page2                    controllers.PublicApp.page2
 GET    /welcome                  controllers.PublicApp.welcome
 
 # Secured pages
 GET    /home                     controllers.SecuredApp.home
+
+# CRUD Users
+GET    /users                    controllers.CRUDApp.users
+POST   /users                    controllers.CRUDApp.newUser
+POST   /users/:username/delete   controllers.CRUDApp.deleteUser(username: String)
 
 # SecureSocial Login page
 GET    /login                    securesocial.controllers.LoginPage.login
