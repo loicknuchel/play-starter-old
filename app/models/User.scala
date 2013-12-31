@@ -12,7 +12,10 @@ import MongoContext._
 case class User(
   id: ObjectId = new ObjectId,
   username: String,
-  password: String = "default",
+  firstName: Option[String] = None,
+  lastName: Option[String] = None,
+  mail: Option[String] = None,
+  password: Option[String] = None,
   added: Date = new Date(),
   updated: Option[Date] = None,
   deleted: Option[Date] = None)
@@ -23,6 +26,9 @@ object User extends ModelCompanion[User, ObjectId] {
   def all(): List[User] = dao.find(MongoDBObject.empty).toList
   def create(username: String) {
     dao.insert(User(username = username))
+  }
+  def create(user: User) {
+    dao.insert(user)
   }
 
   def delete(username: String) {
